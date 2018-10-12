@@ -1,0 +1,16 @@
+﻿@model CodeFirstEF.Models.Kontakt
+
+<h2>Index</h2>
+
+<div>
+
+    @using (Html.BeginForm("DodajKontakt", "Home"))
+    {
+        @Html.EditorFor(m => m)
+        <input type="submit" value="Wyślij" />
+        <a href="\Home\Index">
+            <input type="button" value="Powrót"/>
+        </a>
+    }
+
+</div>

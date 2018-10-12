@@ -21,6 +21,11 @@ namespace CodeFirstEF.Controllers
 
         }
 
+        public ActionResult DodajKontakt()
+        {
+            return View("DodajKontakt");
+        }
+
         [HttpPost]
         public ActionResult DodajKontakt(Kontakt kontakt)
         {
@@ -28,7 +33,7 @@ namespace CodeFirstEF.Controllers
             {
                 if(!ModelState.IsValid)
                 {
-                    return View("Index", kontakt);
+                    return View("DodajKontakt", kontakt);
                 }
                 else
                 {
@@ -38,7 +43,7 @@ namespace CodeFirstEF.Controllers
 
             }
 
-                return View("Index");
+                return View("DodajKontakt");
         }
     }
 }

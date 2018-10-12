@@ -1,13 +1,21 @@
-﻿@model CodeFirstEF.Models.Kontakt
+﻿@model IEnumerable<CodeFirstEF.Models.Kontakt>
 
 <h2>Index</h2>
 
 <div>
 
-    @using (Html.BeginForm("DodajKontakt", "Home"))
+    @foreach(var item in Model)
     {
-        @Html.EditorFor(m => m)
-        <input type="submit" value="Wyślij" />
+        <div>@item.KontaktID</div> <br/>
+        <div>@item.Imie</div><br />
+        <div>@item.Nazwisko</div> <br/>
+        <div>@item.Email</div> <br/>
     }
+
+    <a href="\Home\DodajKontakt">
+        <input type="button"
+               value="Dodaj"
+               class="btn-success" />
+    </a>
 
 </div>
