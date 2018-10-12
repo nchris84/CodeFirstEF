@@ -13,7 +13,12 @@ namespace CodeFirstEF.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            using (var context = new KontaktyContext())
+            {
+                List<Kontakt> list = context.Kontakty.ToList();
+                return View(list);
+            }
+
         }
 
         [HttpPost]
